@@ -15,3 +15,23 @@ casual - number of non-registered user rentals initiated
 registered - number of registered user rentals initiated
 count - number of total rentals
 
+Analysis:
+===========
+#Read the data file from the Machine
+
+import pandas as pd
+your_local_path="D:/DataScience/ML-3/"
+bikes=pd.read_csv(your_local_path+'bikeshare.txt',index_col='datetime',parse_dates=True)
+
+#Renamed one of the Column name(Count to toatl)
+bikes.rename(columns={'count':'total'},inplace=True)
+
+#Visualizing the data
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.rcParams['figure.figsize'] = (8, 6)
+plt.rcParams['font.size'] = 14
+
+
+#Scatter Plot between Temprature and total
